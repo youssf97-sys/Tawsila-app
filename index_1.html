@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>توصيلة - Tawsila | خدمة التوصيل وقضاء الأغراض في كلميم</title>
+<meta name="description" content="توصيلة: خدمة التوصيل وقضاء الأغراض في كلميم بسرعة وأمان. خضار، أدوية، وثائق، وجبات وطرود بـ 10 دراهم.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#1c2a6d; --indigo-d:#121c4d; --sky:#e8edfb; --saffron:#f4b223; --saffron-d:#d99a0f;
+  --ink:#1b2033; --muted:#5b627a; --bg:#f7f8fc; --card:#fff; --line:#e2e6f3; --wa:#1fa855;
+  --r:18px; --shadow:0 6px 22px rgba(28,42,109,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:17px}
+h1,h2,h3,.brand{font-family:'Cairo',sans-serif;line-height:1.35}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.title{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;color:var(--indigo);text-align:center}
+.sub{text-align:center;color:var(--muted);margin:6px auto 36px;max-width:560px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:900;font-size:1.5rem;color:var(--indigo)}
+.brand small{font-weight:600;font-size:.85rem;color:var(--saffron-d);margin-inline-start:6px}
+nav{display:flex;gap:22px;font-weight:700}
+nav a{color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--indigo)}
+@media(max-width:640px){nav{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;font:700 1rem 'Cairo',sans-serif;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#188a46}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn svg{width:20px;height:20px;fill:currentColor}
+
+/* hero */
+.hero{background:var(--indigo);color:#fff;padding:72px 0 80px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:40px;align-items:center}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.1fr .9fr}}
+.hero h1{font-size:clamp(2.6rem,8vw,4.6rem);font-weight:900}
+.hero h1 span{color:var(--saffron)}
+.hero p{font-size:1.2rem;max-width:520px;margin:14px 0 28px;color:#dfe5ff}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.route{width:100%;max-width:420px;margin-inline:auto}
+.route .path{fill:none;stroke:var(--saffron);stroke-width:4;stroke-linecap:round;stroke-dasharray:4 14;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-72}}
+.route text{font:700 15px 'Cairo',sans-serif;fill:#fff}
+.price-pill{display:inline-block;margin-top:22px;background:rgba(255,255,255,.12);border-radius:999px;padding:6px 18px;font-weight:700}
+.price-pill b{color:var(--saffron)}
+
+/* services */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.svc{background:var(--card);border:2px solid transparent;border-radius:var(--r);padding:24px;box-shadow:var(--shadow);cursor:pointer;text-align:start;font:inherit;color:inherit;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;gap:10px}
+.svc:hover{transform:translateY(-4px);border-color:var(--saffron)}
+.svc.active{border-color:var(--indigo);box-shadow:0 10px 28px rgba(28,42,109,.22)}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--sky);display:grid;place-items:center;font-size:1.7rem}
+.svc h3{font-size:1.15rem;color:var(--indigo)}
+.svc p{color:var(--muted);font-size:.98rem;flex:1}
+.svc .foot{display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.price{background:var(--saffron);color:var(--indigo-d);padding:2px 14px;border-radius:999px;font-family:'Cairo',sans-serif}
+.pick{color:var(--indigo);font-size:.92rem}
+
+/* form */
+.formsec{background:var(--sky)}
+form{max-width:640px;margin:0 auto;background:var(--card);padding:28px;border-radius:24px;box-shadow:var(--shadow);display:grid;gap:16px}
+label{font-weight:700;display:block;margin-bottom:4px;color:var(--indigo)}
+input,select,textarea{width:100%;font:inherit;padding:12px 14px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--indigo)}
+textarea{min-height:100px;resize:vertical}
+.err{color:#c0392b;font-size:.92rem;min-height:1.2em}
+.note{text-align:center;color:var(--muted);font-size:.92rem}
+
+/* reviews */
+.revgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-bottom:40px}
+.rev{background:var(--card);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.stars{color:var(--saffron);font-size:1.25rem;letter-spacing:2px}
+.rev p{margin:8px 0;color:var(--ink)}
+.rev b{color:var(--indigo)}
+.summary{text-align:center;margin-bottom:24px;font-weight:700;color:var(--indigo)}
+.rate{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:4px}
+.rate input{position:absolute;opacity:0;width:1px;height:1px}
+.rate label{font-size:2rem;color:#cdd3e6;cursor:pointer;margin:0;transition:color .15s,transform .15s;line-height:1}
+.rate label:hover,.rate label:hover~label,.rate input:checked~label{color:var(--saffron)}
+.rate input:focus-visible+label{outline:3px solid var(--saffron);border-radius:6px}
+.rate label:active{transform:scale(1.2)}
+
+/* footer */
+footer{background:var(--indigo-d);color:#cfd6f5;padding:44px 0 90px}
+.fgrid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer h3{color:#fff;margin-bottom:8px}
+footer a:hover{color:var(--saffron)}
+.copy{text-align:center;margin-top:30px;font-size:.9rem;opacity:.75}
+.fab{position:fixed;bottom:18px;inset-inline-start:18px;z-index:60;display:flex;gap:10px}
+.fab a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.28);transition:transform .2s}
+.fab a:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px;fill:currentColor}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--indigo-d);color:#fff;padding:10px 22px;border-radius:999px;opacity:0;pointer-events:none;transition:.3s;z-index:70}
+.toast.show{opacity:1;transform:translateX(-50%)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="brand">توصيلة<small>Tawsila</small></a>
+    <nav aria-label="التنقل">
+      <a href="#services">الخدمات</a>
+      <a href="#order">اطلب الآن</a>
+      <a href="#reviews">آراء العملاء</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>توصيلة <span>Tawsila</span></h1>
+      <p>خدمة التوصيل وقضاء الأغراض في كلميم بسرعة وأمان</p>
+      <div class="cta">
+        <a class="btn btn-wa" href="https://wa.me/212671495825" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.8-.1 1.3z"/></svg>
+          اطلب الآن عبر واتساب
+        </a>
+        <a class="btn btn-ghost" href="tel:+212671495825">اتصل بنا</a>
+      </div>
+      <span class="price-pill">كل خدمة داخل كلميم بـ <b>10 دراهم</b></span>
+    </div>
+    <svg class="route" viewBox="0 0 400 300" role="img" aria-label="مسار توصيل من المتجر إلى باب البيت">
+      <path class="path" d="M70 230 C 80 120, 200 250, 210 140 S 320 90, 335 70"/>
+      <circle cx="70" cy="230" r="16" fill="#f4b223"/>
+      <circle cx="335" cy="70" r="16" fill="#fff"/>
+      <text x="70" y="272" text-anchor="middle">السوق</text>
+      <text x="335" y="42" text-anchor="middle">باب بيتك</text>
+    </svg>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2 class="title">خدماتنا</h2>
+    <p class="sub">اختر الخدمة التي تحتاجها، وسنُجهّز طلبك على واتساب في ثوانٍ.</p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="order" class="formsec">
+  <div class="wrap">
+    <h2 class="title">اطلب خدمتك</h2>
+    <p class="sub">املأ البيانات وسيفتح واتساب برسالة جاهزة للإرسال.</p>
+    <form id="orderForm" novalidate>
+      <div>
+        <label for="service">الخدمة</label>
+        <select id="service" required></select>
+      </div>
+      <div>
+        <label for="name">الاسم (اختياري)</label>
+        <input id="name" type="text" autocomplete="name" placeholder="اسمك">
+      </div>
+      <div>
+        <label for="address">العنوان / الحي</label>
+        <input id="address" type="text" autocomplete="street-address" placeholder="مثال: حي الوحدة، شارع ...">
+        <div class="err" id="addrErr" role="alert"></div>
+      </div>
+      <div>
+        <label for="notes">ملاحظات الطلب</label>
+        <textarea id="notes" placeholder="اكتب تفاصيل طلبك: ما الذي تريد شراءه أو توصيله؟"></textarea>
+      </div>
+      <button class="btn btn-wa" type="submit">طلب الخدمة عبر واتساب</button>
+      <p class="note">سعر الخدمة: 10 دراهم داخل المدينة. ثمن المشتريات يُدفع عند التسليم.</p>
+    </form>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2 class="title">آراء العملاء</h2>
+    <p class="sub">تجارب من يستعملون توصيلة في كلميم.</p>
+    <div class="summary" id="summary"></div>
+    <div class="revgrid" id="revs"></div>
+
+    <form id="revForm" novalidate>
+      <h3 style="color:var(--indigo)">شاركنا رأيك</h3>
+      <div>
+        <label>تقييمك</label>
+        <div class="rate" id="rate">
+          <input type="radio" name="star" id="s5" value="5"><label for="s5" title="5">★</label>
+          <input type="radio" name="star" id="s4" value="4"><label for="s4" title="4">★</label>
+          <input type="radio" name="star" id="s3" value="3"><label for="s3" title="3">★</label>
+          <input type="radio" name="star" id="s2" value="2"><label for="s2" title="2">★</label>
+          <input type="radio" name="star" id="s1" value="1"><label for="s1" title="1">★</label>
+        </div>
+      </div>
+      <div>
+        <label for="rname">الاسم</label>
+        <input id="rname" type="text" maxlength="40" placeholder="اسمك">
+      </div>
+      <div>
+        <label for="rtext">تعليقك</label>
+        <textarea id="rtext" maxlength="300" placeholder="كيف كانت تجربتك؟"></textarea>
+      </div>
+      <div class="err" id="revErr" role="alert"></div>
+      <button class="btn btn-wa" type="submit" style="background:var(--indigo)">إرسال التقييم</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h3>توصيلة - Tawsila</h3>
+        <p>خدمة التوصيل وقضاء الأغراض في كلميم بسرعة وأمان.</p>
+      </div>
+      <div>
+        <h3>تواصل معنا</h3>
+        <p><a href="tel:+212671495825" dir="ltr">+212 671 495 825</a></p>
+        <p><a href="https://wa.me/212671495825" target="_blank" rel="noopener">راسلنا على واتساب</a></p>
+      </div>
+      <div>
+        <h3>المدينة</h3>
+        <p>كلميم، المغرب</p>
+      </div>
+    </div>
+    <p class="copy">© <span id="yr"></span> توصيلة. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<div class="fab">
+  <a href="tel:+212671495825" style="background:var(--indigo)" aria-label="اتصل بنا">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+  </a>
+  <a href="https://wa.me/212671495825" target="_blank" rel="noopener" style="background:var(--wa)" aria-label="واتساب">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.8-.1 1.3z"/></svg>
+  </a>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const WA = '212671495825';
+const SERVICES = [
+  {i:'🥬', t:'تسخرة الخُضار والفواكه', d:'شراء الخُضار والفواكه الطرية من السوق وتوصيلها حتى باب البيت', p:10},
+  {i:'💊', t:'جلب الأدوية من الصيدلية', d:'شراء وتوصيل جميع الأدوية والمستلزمات الطبية', p:10},
+  {i:'📄', t:'توصيل وثائق وأوراق', d:'نقل وتوصيل الأوراق والوثائق الهامة بين الأحياء بسرعة وأمان', p:10},
+  {i:'🥪', t:'توصيل الوجبات والسندويتشات', d:'جلب وتوصيل وجبتك المفضلة من أي سناك أو مطعم في كلميم', p:10},
+  {i:'🛒', t:'إقضاء المستلزمات اليومية', d:'شراء الأغراض والمواد الغذائية من الهري أو بقال الحي', p:10},
+  {i:'🎁', t:'توصيل الهدايا والطرود', d:'توصيل أمانة أو طرد أو هدية من بيت لبيت داخل المدينة', p:10},
+  {i:'⚡', t:'قضاء أغراض مستعجلة', d:'دفع الفواتير أو جلب أغراض نسيتموها في مكان معين', p:10}
+];
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
+
+/* services + select */
+const grid = $('grid'), sel = $('service');
+SERVICES.forEach((s,n)=>{
+  grid.insertAdjacentHTML('beforeend',
+    `<button type="button" class="svc" data-n="${n}" aria-pressed="false">
+      <div class="ico" aria-hidden="true">${s.i}</div>
+      <h3>${s.t}</h3><p>${s.d}</p>
+      <div class="foot"><span class="price">${s.p} دراهم</span><span class="pick">اختر الخدمة ‹</span></div>
+    </button>`);
+  sel.add(new Option(`${s.t} - ${s.p} دراهم`, n));
+});
+function choose(n){
+  sel.value = n;
+  document.querySelectorAll('.svc').forEach(b=>{
+    const on = b.dataset.n == n; b.classList.toggle('active',on); b.setAttribute('aria-pressed',on);
+  });
+}
+grid.addEventListener('click', e=>{
+  const b = e.target.closest('.svc'); if(!b) return;
+  choose(b.dataset.n);
+  $('order').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>$('address').focus({preventScroll:true}),600);
+});
+sel.addEventListener('change', ()=>choose(sel.value));
+choose(0);
+
+/* order -> WhatsApp */
+$('orderForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const addr = $('address').value.trim();
+  if(!addr){ $('addrErr').textContent='يرجى كتابة عنوانك أو اسم الحي.'; $('address').focus(); return; }
+  $('addrErr').textContent='';
+  const s = SERVICES[sel.value], name = $('name').value.trim(), notes = $('notes').value.trim();
+  const msg = [
+    'السلام عليكم، أريد طلب خدمة من توصيلة 🛵',
+    '',
+    '📌 الخدمة: ' + s.t,
+    '💰 السعر: ' + s.p + ' دراهم',
+    name ? '👤 الاسم: ' + name : null,
+    '📍 العنوان: ' + addr,
+    '📝 ملاحظات: ' + (notes || 'لا يوجد'),
+    '',
+    'شكراً لكم.'
+  ].filter(l => l !== null).join('\n');
+  window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+});
+
+/* reviews (stored in this browser only) */
+const KEY = 'tawsila_reviews_v1';
+const SEED = [
+  {n:'أمينة', r:5, t:'وصلتني الأدوية في أقل من نصف ساعة. خدمة مريحة جداً.'},
+  {n:'يوسف', r:5, t:'طلبت وجبة من السناك وجاءت ساخنة. سأطلب مرة أخرى.'},
+  {n:'سعيد', r:4, t:'وثائقي وصلت بسرعة وبأمان، والتواصل عبر واتساب سهل.'}
+];
+function load(){ try{ const v = JSON.parse(localStorage.getItem(KEY)); return Array.isArray(v) ? v : []; }catch{ return []; } }
+function save(a){ try{ localStorage.setItem(KEY, JSON.stringify(a)); }catch{} }
+let mine = load();
+function render(){
+  const all = [...mine, ...SEED];
+  $('revs').innerHTML = all.map(x=>
+    `<article class="rev"><div class="stars" aria-label="${x.r} من 5">${'★'.repeat(x.r)}${'☆'.repeat(5-x.r)}</div><p>${esc(x.t)}</p><b>${esc(x.n)}</b></article>`).join('');
+  const avg = all.reduce((a,x)=>a+x.r,0)/all.length;
+  $('summary').textContent = `★ ${avg.toFixed(1)} من 5 (${all.length} تقييمات)`;
+}
+render();
+$('revForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const star = document.querySelector('input[name=star]:checked');
+  const n = $('rname').value.trim(), t = $('rtext').value.trim();
+  if(!star || !n || !t){ $('revErr').textContent='يرجى اختيار التقييم وكتابة اسمك وتعليقك.'; return; }
+  $('revErr').textContent='';
+  mine.unshift({n, r:+star.value, t});
+  save(mine); render(); e.target.reset(); toast('شكراً لتقييمك!');
+});
+$('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
